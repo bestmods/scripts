@@ -73,7 +73,7 @@ cs-dynamicslots:dynamicslots
 mc-decocraft:decocraft
 sims4-hs:hs
 sims4-sol:sol
-halomcc-ccu:halomcc-ccu
+halomcc-ccu:ccu
 mc-ice-and-fire-dragons:ice-and-fire-dragons
 sims4-twsb:twsb
 gtav-zhalflife:zhalflife

@@ -16,7 +16,8 @@ cats = [
     "fallout4",
     "tf2",
     "cs",
-    "css"
+    "css",
+    "halomcc"
 ]
 
 mapper = {
@@ -32,9 +33,14 @@ def main():
     outputRaw = ""
     outputRedirect = ""
     
+    totalUrls = 0
+    totRedirects = 0
+    
     try:
         with open(srcPath, "r") as f:
             for line in f:
+                totalUrls += 1
+                
                 # Get current URL.
                 oldUrl = line.strip()
                 newUrl = oldUrl
@@ -56,6 +62,9 @@ def main():
                         
                         break
                 
+                if catRaw is None:
+                    print(f"WARNING! URL doesn't have category: {oldUrl}")
+                
                 # Write to raw.
                 outputRaw += f"{oldUrl}:{newUrl}\n"
                 
@@ -66,7 +75,9 @@ def main():
                     # Check for mapping.
                     if catMapped in mapper:
                         catMapped = mapper[catMapped]
-                        
+                    
+                    totRedirects += 1
+                    
                     outputRedirect += f"/view/{oldUrl}:/{catMapped}/mod/{newUrl}\n"
                     
         # Write to output raw.
@@ -79,6 +90,10 @@ def main():
     except Exception as e:
         print("Failed to convert URLs.")
         print(e)
+        
+        return
+    
+    print(f"Wrote {totRedirects}/{totalUrls} redirects.")
     
 if __name__ == "__main__":
     main()

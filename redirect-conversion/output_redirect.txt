@@ -71,6 +71,7 @@
 /view/mc-decocraft:/minecraft/mod/decocraft
 /view/sims4-hs:/sims4/mod/hs
 /view/sims4-sol:/sims4/mod/sol
+/view/halomcc-ccu:/halomcc/mod/ccu
 /view/mc-ice-and-fire-dragons:/minecraft/mod/ice-and-fire-dragons
 /view/sims4-twsb:/sims4/mod/twsb
 /view/gtav-zhalflife:/gtav/mod/zhalflife
