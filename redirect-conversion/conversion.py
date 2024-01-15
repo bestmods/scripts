@@ -29,9 +29,11 @@ def main():
     
     dstPathRaw = "output_raw.txt"
     dstPathRedirect = "output_redirect.txt"
+    dstPathBroken = "output_broken.txt"
     
     outputRaw = ""
     outputRedirect = ""
+    outputBroken = ""
     
     totalUrls = 0
     totRedirects = 0
@@ -62,9 +64,6 @@ def main():
                         
                         break
                 
-                if catRaw is None:
-                    print(f"WARNING! URL doesn't have category: {oldUrl}")
-                
                 # Write to raw.
                 outputRaw += f"{oldUrl}:{newUrl}\n"
                 
@@ -79,14 +78,22 @@ def main():
                     totRedirects += 1
                     
                     outputRedirect += f"/view/{oldUrl}:/{catMapped}/mod/{newUrl}\n"
+                else:
+                    print(f"WARNING! URL doesn't have category: {oldUrl}")
+                    
+                    outputBroken += f"{oldUrl}\n"
                     
         # Write to output raw.
         with open(dstPathRaw, "w") as f:
             f.write(outputRaw)
             
         # Write to output redirect.
-        with open (dstPathRedirect, "w") as f:
+        with open(dstPathRedirect, "w") as f:
             f.write(outputRedirect)
+            
+        # Write to output broken.
+        with open(dstPathBroken, "w") as f:
+            f.write(outputBroken)
     except Exception as e:
         print("Failed to convert URLs.")
         print(e)
