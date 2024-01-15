@@ -21,7 +21,8 @@ cats = [
 ]
 
 mapper = {
-    "mc": "minecraft"
+    "mc": "minecraft",
+    "gta4": "gtaiv"
 }
 
 def main():

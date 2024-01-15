@@ -4,7 +4,7 @@
 /view/mc-minecolonies:/minecraft/mod/minecolonies
 /view/mc-xaerominimap:/minecraft/mod/xaerominimap
 /view/stardewvalley-smapi:/stardewvalley/mod/smapi
-/view/gta4-l4l:/gta4/mod/l4l
+/view/gta4-l4l:/gtaiv/mod/l4l
 /view/mc-framedblocks:/minecraft/mod/framedblocks
 /view/sims4-nocensor:/sims4/mod/nocensor
 /view/mc-bookshelf:/minecraft/mod/bookshelf
