@@ -1,0 +1,1 @@
+A repository that stores small scripts used for [Best Mods](https://bestmods.io/).
