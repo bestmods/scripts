@@ -31,10 +31,12 @@ def main():
     dstPathRaw = "output_raw.txt"
     dstPathRedirect = "output_redirect.txt"
     dstPathBroken = "output_broken.txt"
+    dstPathQuery = "output_query.txt"
     
     outputRaw = ""
     outputRedirect = ""
     outputBroken = ""
+    outputQuery = ""
     
     totalUrls = 0
     totRedirects = 0
@@ -95,6 +97,15 @@ def main():
         # Write to output broken.
         with open(dstPathBroken, "w") as f:
             f.write(outputBroken)
+            
+        # Compile PSQL query.
+        outputQuery = 'UPDATE "Mod" SET "url" = REGEXP_REPLACE("url", \'%s\', \'\') WHERE "url" ~ \'%s\';'
+        
+        catStrTemplate = '|'.join([f"{cat}-" for cat in cats])
+        outputQuery = outputQuery % (f'^({catStrTemplate})', f'^({catStrTemplate})')
+        
+        with open(dstPathQuery, "w") as f:
+            f.write(outputQuery)
     except Exception as e:
         print("Failed to convert URLs.")
         print(e)

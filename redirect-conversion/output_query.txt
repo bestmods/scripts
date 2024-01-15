@@ -1,0 +1,1 @@
+UPDATE "Mod" SET "url" = REGEXP_REPLACE("url", '^(sims4-|mc-|rust-|gta4-|gtav-|stardewvalley-|skyrim-|wow-|gmod-|csgo-|l4d2-|sc2-|fallout4-|tf2-|cs-|css-|halomcc-)', '') WHERE "url" ~ '^(sims4-|mc-|rust-|gta4-|gtav-|stardewvalley-|skyrim-|wow-|gmod-|csgo-|l4d2-|sc2-|fallout4-|tf2-|cs-|css-|halomcc-)';
